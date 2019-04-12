@@ -1,3 +1,4 @@
+const request = require('supertest');
 const server = require('./server.js');
 
 // - [ ] Write the **tests BEFORE** writing the route handlers.
@@ -28,6 +29,8 @@ const server = require('./server.js');
 
 
 describe('server.js', () => {
+
+  // afterEach()
 
   describe('POST /games', () => {
     it('should throw a fit if handed a malformed schema', async() => {
