@@ -1,5 +1,7 @@
 const request = require('supertest');
 const server = require('./server.js');
+const knexConfig = require('./knexfile.js');
+const db = require('knex')(knexConfig.development);
 
 // - [ ] Write the **tests BEFORE** writing the route handlers.
 
@@ -30,7 +32,13 @@ const server = require('./server.js');
 
 describe('server.js', () => {
 
-  // afterEach()
+  beforeAll(async () => {
+    await db('games').truncate();
+  });
+
+  afterEach(async () => {
+    await db('games').truncate();
+  });
 
   describe('POST /games', () => {
     it('should throw a fit if handed a malformed schema', async() => {
