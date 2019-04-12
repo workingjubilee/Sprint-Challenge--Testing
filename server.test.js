@@ -41,7 +41,7 @@ describe('server.js', () => {
 
     it('should return a good response if handed a correct schema', async() => {
 
-      const goodSchema = {title: "DooM", genre: "First-Person Shooter", releaseYear: "1993" };
+      const goodSchema = { title: "DooM", genre: "First-Person Shooter", releaseYear: "1993" };
 
       const response = await request(server).post('/games').send(goodSchema);
 
@@ -50,7 +50,7 @@ describe('server.js', () => {
 
     it('should allow releaseYear to be optional', async() => {
 
-      const optionalSchema = {title: "Wrestling", genre: "Contact Sports" };
+      const optionalSchema = { title: "Wrestling", genre: "Contact Sports" };
 
       const response = await request(server).post('/games').send(optionalSchema);
 
@@ -59,9 +59,9 @@ describe('server.js', () => {
 
     it('should respond with JSON', async() => {
 
-      const optionalSchema = {title: "The Dozens", genre: "Insults" };
+      const testSchema = { title: "The Dozens", genre: "Insults" };
 
-      const response = await request(server).post('/games').send(optionalSchema);
+      const response = await request(server).post('/games').send(testSchema);
 
       expect(response.type).toEqual('application/json');
     })
