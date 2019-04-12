@@ -28,14 +28,34 @@ server.post('/games', async (req,res) => {
 
 server.get('/games', async (req,res) => {
 
-try {
-  const gamesList = await db('games').select('*');
+  try {
+    const gamesList = await db('games').select('*');
 
-  console.log(gamesList);
-  res.status(200).json(gamesList);
-} catch(error) {
-  console.log(error);
-}
+    console.log(gamesList);
+    res.status(200).json(gamesList);
+  } catch(error) {
+   console.log(error);   
+  }
+
+});
+
+server.get('/games/:id', async (req,res) => {
+  const { id } = req.params;
+
+  console.log(id);
+
+  try {
+    const game = await db('games').where({ id }).first();
+
+    if (game) {
+      res.status(200).json(game);
+    } else {
+      res.status(404).json({ message: "Couldn't find it." })
+    }
+
+  } catch(error) {
+    console.log(error);   
+  }
 
 });
 
