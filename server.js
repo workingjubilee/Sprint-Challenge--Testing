@@ -8,4 +8,15 @@ const server = express();
 server.use(helmet());
 server.use(express.json());
 
+// server.post('/games', async (req,res) => {
+
+// });
+
+server.get('/games', async (req,res) => {
+
+  const gamesList = await db('games').select('*');
+  res.status(200).json(gamesList);
+
+});
+
 module.exports = server;
