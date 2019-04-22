@@ -26,15 +26,15 @@ Demonstrate your understanding of this week's concepts by answering the followin
 
 1. In Jest, what are the differences between `describe()` and `it()` globals, and what are good uses for them?
 
-Both are for controlling how Jest runs, interprets, and sends back data from your tests. Each it() is going to be parsed as a single test, and it() is what is used for running the tests, primarily. However, describe() lets you easily chunk the data for a set of tests, even though they might all be running inside the same file. When using some testing libraries,
+Both are for controlling how Jest runs, interprets, and sends back data from your tests. Each it() is going to be parsed as a single test, and it() is what is used for running the tests, primarily. However, describe() lets you easily chunk the data for a set of tests, even though they might all be running inside the same file. When using some testing libraries, describe() and it() are both actually required, even though they use similar syntax to Jest.
 
-1. What is the point of `Test Driven Development`? What do you think about this approach?
+2. What is the point of `Test Driven Development`? What do you think about this approach?
 
 "TDD" as in "write tests and let tests drive you towards the program you want, so you start with something like 100% test coverage on the basic functionality" is fine. Great, even!
 
 "TDD" as in "write 100% of your tests before touching a single function()" is awful. People usually use "tooth-pulling" to describe something painful but, based on my experience? Nah. This was worse.
 
-1. Mention three types of automated tests.
+3. Mention three types of automated tests.
 
 Unit tests. Testing a single component, be it a function, class, object, etc.
 Integration tests. Testing two components operating together.

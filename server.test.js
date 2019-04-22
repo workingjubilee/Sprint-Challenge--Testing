@@ -132,7 +132,7 @@ describe('server.js', () => {
         return Promise.all(postSchemas)
       }
 
-      const response = batchPost().then(res => request(server).get('/games/1'));
+      const response = await batchPost().then(res => request(server).get('/games/1'));
 
       console.log(response);
 
